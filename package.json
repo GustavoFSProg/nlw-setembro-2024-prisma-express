@@ -23,7 +23,7 @@
     "seed": "tsx --env-file .env ./src/db/seed.ts",
     "build": "sucrase  ./src -d ./dist --transforms typescript,imports",
     "start": "node dist/index.js",
-    "postinstall": "prisma migrate dev"
+    "postinstall": "prisma generate"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.2"
