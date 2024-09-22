@@ -22,7 +22,8 @@
     "dev": "tsx watch --env-file .env  ./src/index.ts",
     "seed": "tsx --env-file .env ./src/db/seed.ts",
     "build": "sucrase  ./src -d ./dist --transforms typescript,imports",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "postinstall": "prisma migrate dev"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.2"
