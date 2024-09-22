@@ -3,8 +3,10 @@ import express, { Request, Response } from 'express'
 import cors from 'cors'
 
 import dotenv from 'dotenv'
-import GoalController from './Controllers/GoalController'
-import GoalCompletionsControllerCopy from './Controllers/GoalCompletionsController copy'
+import GoalController from './src/Controllers/GoalController'
+import GoalCompletionsControllerCopy from './src/Controllers/GoalCompletionsController copy'
+// import GoalController from './Controllers/GoalController'
+// import GoalCompletionsControllerCopy from './Controllers/GoalCompletionsController copy'
 
 dotenv.config()
 
