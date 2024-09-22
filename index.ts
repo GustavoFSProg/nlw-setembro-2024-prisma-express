@@ -30,7 +30,7 @@ app.get('/get-goals', GoalController.getGoals)
 app.post('/goals', GoalController.createGoals)
 
 
-app.get('/get-goals_completions', GoalCompletionsControllerCopy.getGoalsCompletions)
+app.get('/get-goals-completions', GoalCompletionsControllerCopy.getGoalsCompletions)
 app.get('/get-one-goal/:id', GoalCompletionsControllerCopy.getOneGoal)
 app.post('/completions', GoalCompletionsControllerCopy.createGoalsCompletions)
 
