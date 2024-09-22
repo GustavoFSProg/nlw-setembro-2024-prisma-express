@@ -1,0 +1,12 @@
+{
+  "build": "sucrase  ./src -d ./dist --transforms typescript,imports",
+  "start": "node dist/index.js",
+  "functions": {
+    "api/src/**/*.ts": {
+      "maxDuration": 30
+    }
+  },
+
+}
+
+

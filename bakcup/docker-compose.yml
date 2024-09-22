@@ -1,0 +1,34 @@
+version: '3.7'
+# name: NLW
+services:
+  pg:
+    image: bitnami/postgresql:13.16.0
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=inorbit
+
+#  volumes:
+#       - ./app:/usr/share/nginx/html
+
+
+# version: '3.7'
+# services:
+#   web:
+#     image: nginx:alpine
+#     ports:
+#       - "8000:80"
+#     volumes:
+#       - ./app:/usr/share/nginx/html
+# services:
+#   postgres:
+#     image: bitnami/postgresql:13.16.0
+#     volumes:
+#       - ./01-basegeografica.sql:/docker-entrypoint-initdb.d/01-basegeografica.sql
+#       - ./02-basegeografica.sql:/docker-entrypoint-initdb.d/02-basegeografica.sql
+#     environment:
+#       POSTGRES_PASSWORD: "Postgres2022!"
+#     ports:
+#       - "5432:5432"
