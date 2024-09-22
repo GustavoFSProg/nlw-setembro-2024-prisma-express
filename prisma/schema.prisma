@@ -8,16 +8,16 @@ generator client {
   provider = "prisma-client-js"
 }
 
-datasource db {
-  provider = "sqlite"
-  url      = env("file:./nlw.db")
-}
-
-
 // datasource db {
-//   provider = "mongodb"
-//   url      = env("DATABASE_URL")
+//   provider = "sqlite"
+//   url      = env("file:./nlw.db")
 // }
+
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE")
+}
 
 model Goals {
  id String @id @default(uuid()) @map("_id")
