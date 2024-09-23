@@ -1,10 +1,11 @@
-
+// biome-ignore lint/style/useImportType: <explanation>
 import express, { Request, Response } from 'express'
 import cors from 'cors'
 
 import dotenv from 'dotenv'
 import GoalController from './Controllers/GoalController'
-import GoalCompletionsControllerCopy from './Controllers/GoalCompletionsController copy'
+import GoalCompletionsControllerCopy from './Controllers/GoalCompletionsController'
+import summaryController from './Controllers/summaryController'
 
 dotenv.config()
 
@@ -23,16 +24,17 @@ app.get('/', (req: Request, res: Response) => {
   return res.status(200).send({ msg: 'Api Running Fine!!' })
 })
 
-
 app.get('/get-goals', GoalController.getGoals)
 app.post('/goals', GoalController.createGoals)
 
-
-app.get('/get-goals-completions', GoalCompletionsControllerCopy.getGoalsCompletions)
+app.get(
+  '/get-goals-completions',
+  GoalCompletionsControllerCopy.getGoalsCompletions
+)
 app.get('/get-one-goal/:id', GoalCompletionsControllerCopy.getOneGoal)
 app.post('/completions', GoalCompletionsControllerCopy.createGoalsCompletions)
 
-
+app.get('/summary', summaryController.Summary)
 
 app.listen(PORT as string, () => {
   console.log(`💪 HTTP server running!!!: ${PORT}`)

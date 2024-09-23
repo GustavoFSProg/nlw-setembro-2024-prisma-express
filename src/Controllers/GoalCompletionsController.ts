@@ -1,3 +1,4 @@
+// biome-ignore lint/style/useImportType: <explanation>
 import { Request, Response } from 'express'
 import { PrismaClient } from '@prisma/client'
 
@@ -21,6 +22,8 @@ async function getGoalsCompletions(req: Request, res: Response) {
   try {
     const goals = await prisma.goal_Completions.findMany()
 
+    console.log(` Total: ${goals.length}`)
+
     return res.status(201).send(goals)
   } catch (error) {
     return res.status(400).send({ msg: 'ERROR!', error })
@@ -40,7 +43,7 @@ async function getOneGoal(req: Request, res: Response) {
     //   return console.log(x)
     // }
 
-    console.log(goals.length)
+    console.log(`One completion: ${goals.length}`)
 
     return res.status(201).send(goals)
   } catch (error) {
